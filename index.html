@@ -9,8 +9,14 @@
     <script type="text/javascript" src="script.js" defer></script>
 </head>
 <body>
+    <form onsubmit="return false;">
+        <label for="numOfEl">Number of squares per side (between 4 - 100): </label>
+        <input type="range" value="24" id="numOfEl" name="numOfEl" min="4" max="100" oninput="this.nextElementSibling.value = this.value">
+        <output>16</output>
+        <input type="submit" onclick="updateGrid()">
+    </form>
     <div id="grid-container">
-        
+
     </div>
 </body>
 </html>

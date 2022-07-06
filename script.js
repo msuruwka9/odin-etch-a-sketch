@@ -1,4 +1,9 @@
 let gridContainer = document.querySelector('#grid-container');
+
+function createGrid(numOfSquares){
+    
+}
+
 window.onload = () => {
     let gridElement = document.createElement('div');
     gridElement.style.cssText = "width: 40px;height:40px;flex: 1 0 auto;";
@@ -10,4 +15,9 @@ window.onload = () => {
         gridContainer.appendChild(gridElementClone);
         console.log(i);
     }
+}
+
+function updateGrid(){
+    let numOfSquares = document.querySelector('#numOfEl').value;
+    createGrid(numOfSquares);
 }
