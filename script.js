@@ -1,5 +1,7 @@
 let gridContainer = document.querySelector('#grid-container');
 
+const DEFAULT_SIZE = 16;
+
 function createGrid(numOfSquares){
     let gridElement = document.createElement('div');
     gridElement.style.cssText = `width: ${640/numOfSquares}px;height:${640/numOfSquares}px;flex: 1 0 auto;`;
@@ -14,11 +16,11 @@ function createGrid(numOfSquares){
 }
 
 window.onload = () => {
-    createGrid(16);
+    createGrid(DEFAULT_SIZE);
 }
 
 function updateGrid(){
     let numOfSquares = document.querySelector('#numOfEl').value;
-    gridContainer.replaceChildren();
+    gridContainer.replaceChildren(); //removes previous children
     createGrid(numOfSquares);
 }
