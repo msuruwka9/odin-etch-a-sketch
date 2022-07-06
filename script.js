@@ -1,13 +1,9 @@
 let gridContainer = document.querySelector('#grid-container');
 
 function createGrid(numOfSquares){
-    
-}
-
-window.onload = () => {
     let gridElement = document.createElement('div');
-    gridElement.style.cssText = "width: 40px;height:40px;flex: 1 0 auto;";
-    for(let i = 0; i < 16*16; i++){
+    gridElement.style.cssText = `width: ${640/numOfSquares}px;height:${640/numOfSquares}px;flex: 1 0 auto;`;
+    for(let i = 0; i < numOfSquares*numOfSquares; i++){
         gridElementClone = gridElement.cloneNode(true);
         gridElementClone.addEventListener('mouseover', (e) =>{
             e.target.style.background = 'black';
@@ -17,7 +13,12 @@ window.onload = () => {
     }
 }
 
+window.onload = () => {
+    createGrid(16);
+}
+
 function updateGrid(){
     let numOfSquares = document.querySelector('#numOfEl').value;
+    gridContainer.replaceChildren();
     createGrid(numOfSquares);
 }
